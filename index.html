@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html ng-app = "Modules"> <!-- Directiva de angular que extiende las capacidades de HTML-->
+  <head>
+    <meta charset="utf-8">
+    <title> Hola controller </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="controller.js"></script>
+  </head>
+  <body ng-controller="Controller">
+    {{ "Hola" + nombre }}
+    <input type="text" ng-model="nombre"> 
+    <hr>
+    Comentarios
+    <input type="text" ng-model="nuevoComentario.comentario">
+    <input type="text" ng-model="nuevoComentario.usuario">
+    <button ng-click="agregarComentario()">Agregar</button>
+    <ul>
+        Tabla<!-- Genera un for el ng-repeat // com es mi variable local del html-->
+        <li ng-repeat="com in comentarios">
+          {{com.comentario}} <strong>{{com.usuario}}</strong>
+        </li>
+    </ul>
+    <hr>
+  </body>
+</html>
+
